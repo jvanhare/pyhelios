@@ -3,22 +3,19 @@ import sys
 import inspect
 import rich.pretty
 from loguru import logger
+from importlib.metadata import metadata
 
-import pyhelios
-import pyhelios.toml
+# -- Get the Metadata.
+__version__ = metadata("pyhelios")["Version"]
+__author__ = metadata("pyhelios")["Author"]
+__maintainer__ = metadata("pyhelios")["Maintainer"]
+__license__ = metadata("pyhelios")["License"]
+__description__ = metadata("pyhelios")["Summary"]
 
-pyhelios_path = os.path.dirname(inspect.getfile(pyhelios))
-pyproject = os.path.join(pyhelios_path, "..", "pyproject.toml")
-metadata = pyhelios.toml.read(pyproject)
-
-__version__ = metadata["tool"]["poetry"]["version"]
-__authors__ = metadata["tool"]["poetry"]["authors"]
-__maintainers__ = metadata["tool"]["poetry"]["maintainers"]
-__license__ = metadata["tool"]["poetry"]["license"]
-__description__ = metadata["tool"]["poetry"]["description"]
-
+# -- Configure the rich package.
 rich.pretty.install()
 
+# -- Configure le loguru package.
 config = {
     "handlers": [
         {
