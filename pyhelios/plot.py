@@ -59,7 +59,7 @@ class Plot:
         # --- Get template.
         if not TmpFn:
             TmpFn = os.path.dirname(inspect.getfile(pyhelios))
-            TmpFn = os.path.join(TmpFn, "..", "share", "templates", "plot.tex")
+            TmpFn = os.path.join(TmpFn, "share", "templates", "plot.tex")
         self.tmp = get_jinja_latex_template(TmpFn)
         pyhelios.logger.log("INFO", f"Reading {TmpFn}")
         # --- Loop over each figure contained in the TOML file.
