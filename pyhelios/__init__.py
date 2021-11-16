@@ -3,7 +3,11 @@ import sys
 import inspect
 import rich.pretty
 from loguru import logger
-from importlib.metadata import metadata
+
+try:
+    from importlib.metadata import metadata
+except ImportError: # When Python < 3.8
+    from importlib_metadata.metadata import metadata 
 
 # -- Get the Metadata.
 __version__ = metadata("pyhelios")["Version"]
