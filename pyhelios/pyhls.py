@@ -5,7 +5,7 @@ from typer import Typer, Argument, Option, Context
 from typing import List, Optional
 
 _help = f"{pyhelios.__description__} Command Line Interface (CLI)"
-app = Typer(help=_help, epilog=f"Report bugs to {pyhelios.__maintainer__}")
+app = Typer(help=_help, epilog=f"Report bugs to {pyhelios.__maintainers__[0]}")
 
 
 @app.command()

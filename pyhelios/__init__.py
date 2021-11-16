@@ -4,17 +4,14 @@ import inspect
 import rich.pretty
 from loguru import logger
 
+# -- Define the metadata.
 try:
-    from importlib.metadata import metadata
+    from importlib import metadata
 except ImportError: # When Python < 3.8
-    from importlib_metadata.metadata import metadata 
-
-# -- Get the Metadata.
-__version__ = metadata("pyhelios")["Version"]
-__author__ = metadata("pyhelios")["Author"]
-__maintainer__ = metadata("pyhelios")["Maintainer"]
-__license__ = metadata("pyhelios")["License"]
-__description__ = metadata("pyhelios")["Summary"]
+    import importlib_metadata as metadata
+__version__ = metadata.version("pyhelios")
+__description__ = "The Helios' toolbox"
+__maintainers__ = ["Julien Vanharen <julien.vanharen@gmail.com>"]
 
 # -- Configure the rich package.
 rich.pretty.install()
