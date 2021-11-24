@@ -14,6 +14,9 @@ rule gmsh_3d
 # Run epilobe from 2D gmsh mesh to Cedre maillage.dat. #
 rule epilobe_gmsh_2d_to_cedre
   command = pyhls run "epilobe" -s "1" -s "$basename" -s "0" -s "1" -s "0. 0. 1." -d "$output_directory" > $output_directory/epilobe.log
+# Run epilobe from 3D gmsh mesh to Cedre maillage.dat. #
+rule epilobe_gmsh_3d_to_cedre
+  command = pyhls run "epilobe" -s "1" -s "$basename" -s "0" -d "$output_directory" > $output_directory/epilobe.log
 # Run epinette from Cedre maillage.dat to *_m.0. #
 rule epinette
   command = pyhls run "epinette -rc maillage.dat" -d "$output_directory" > $output_directory/epinette.log

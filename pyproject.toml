@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyhelios"
-version = "2.0.9"
+version = "2.0.10"
 description = "The Helios' toolbox"
 license = "MIT"
 authors = ["Julien Vanharen <julien.vanharen@gmail.com>"]
