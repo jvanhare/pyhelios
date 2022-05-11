@@ -9,7 +9,7 @@ from pyhelios.exe import exist, call_latex
 from pyhelios.template import get_jinja_latex_template
 
 NUMBER_MAJOR_TICK = 6
-NUMBER_MINOR_TICK = 10
+NUMBER_MINOR_TICK = 9
 COLORS = {
     "b": "blue",
     "n": "orange",

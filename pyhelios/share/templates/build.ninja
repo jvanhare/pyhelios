@@ -21,7 +21,7 @@ rule epilobe_gmsh_3d_to_cedre
 rule epinette
   command = pyhls run "epinette -rc maillage.dat" -d "$output_directory" > $output_directory/epinette.log
 rule slurm
-  command = sbatch --workdir=$output_directory $in > $out
+  command = sbatch --chdir=$output_directory $in > $out
 rule python
   command = pyhls python $in > $output_directory/python.log
 rule plot
